@@ -19,7 +19,7 @@ class InvoiceProductSeeder extends Seeder
 
         $invoiceIds = Invoice::pluck('id')->toArray();
         $productIds = Product::pluck('id')->toArray();
-        
+
         // Pre-load all product prices to avoid individual queries
         $productPrices = Product::pluck('price', 'id')->toArray();
 
