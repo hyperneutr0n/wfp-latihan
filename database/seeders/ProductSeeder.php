@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -21,7 +20,7 @@ class ProductSeeder extends Seeder
 
         // Create products in chunks for better memory management
         $chunks = 100;
-        $totalProducts = 5000;
+        $totalProducts = 500;
 
         for ($i = 0; $i < $totalProducts / $chunks; $i++) {
             Product::factory($chunks)->create([

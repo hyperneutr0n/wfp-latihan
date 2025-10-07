@@ -7,4 +7,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // })->name('home');
 
-Route::get('/', [ReportController::class, "reports"]);
+Route::view('/', 'dashboard');
+Route::get('/report', [ReportController::class, "reports"]);

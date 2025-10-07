@@ -21,7 +21,7 @@ class InvoiceSeeder extends Seeder
         $employeeIds = Employee::pluck('id')->toArray();
         $customerIds = Customer::pluck('id')->toArray();
 
-        $totalInvoices = 500000;
+        $totalInvoices = 5000;
         $chunkSize = 1000;
 
         for ($i = 0; $i < $totalInvoices / $chunkSize; $i++) {

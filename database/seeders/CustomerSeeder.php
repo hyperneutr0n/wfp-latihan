@@ -15,7 +15,7 @@ class CustomerSeeder extends Seeder
     {
         $this->command->info('👤 Seeding customers...');
 
-        $totalCustomers = 100000;
+        $totalCustomers = 1000;
         $chunkSize = 1000;
 
         for ($i = 0; $i < $totalCustomers / $chunkSize; $i++) {
