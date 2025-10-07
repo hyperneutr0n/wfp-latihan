@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReportController;
 use Illuminate\Support\Facades\Route;
 
@@ -8,4 +12,8 @@ use Illuminate\Support\Facades\Route;
 // })->name('home');
 
 Route::view('/', 'dashboard');
+Route::resource('product', ProductController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('customer', CustomerController::class);
+Route::resource('invoice', InvoiceController::class);
 Route::get('/report', [ReportController::class, "reports"]);
