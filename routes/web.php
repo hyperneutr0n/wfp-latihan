@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'dashboard');
 Route::resource('product', ProductController::class);
 Route::resource('category', CategoryController::class);
+Route::get('/category/{id}/count', [CategoryController::class, 'count'])->name('category.count');
 Route::resource('customer', CustomerController::class);
 Route::resource('invoice', InvoiceController::class);
 Route::get('/report', [ReportController::class, "reports"]);

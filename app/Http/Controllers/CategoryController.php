@@ -17,6 +17,23 @@ class CategoryController extends Controller
         return view("category", compact("categories"));
     }
 
+    public function count($id)
+    {
+        $category = Category::find($id);
+
+        if (!$category) {
+            return response()->json(['error' => 'Category not found'], 404);
+        }
+
+        $productCount = $category->products()->count();
+
+        return response()->json([
+            'category_id' => $id,
+            'category_name' => $category->name,
+            'product_count' => $productCount
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
